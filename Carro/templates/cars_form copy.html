@@ -1,0 +1,30 @@
+{%block content%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{% static "css/form.css" %}">
+</head>
+<body>
+    <main>
+
+        <h1 >Cadastro de Carros</h1>
+
+        <section>
+
+            <form methd="POST" action="{% url "form_view" %}">
+
+                {{ form.as_p}}
+                <button>Salvar</button>
+            </form>
+        
+        </section>
+
+    </main>
+
+</body>
+</html>
+{% endblock %}

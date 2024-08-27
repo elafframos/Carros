@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <form method="GET" action="{% url 'cars_view' %}">
+    <input type="text" name="search" placeholder="Buscar carro...">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <div class="car-grid">
+    {% if car %}
+      {% for cars in car %}
+        <div class="car-card">
+          <img src="{{ cars.photo.url }}" alt="{{ cars.model }} - {{ cars.brand }}">
+          <h2>{{ cars.brand }} {{ cars.model }}</h2>
+          <p>{{ cars.model_year }} - R$ {{ cars.value }}</p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="no-results">Nenhum carro encontrado.</p>
+    {% endif %}
+  </div>
+{% endblock content %}

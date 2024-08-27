@@ -1,0 +1,38 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TWTCcarros  </title>
+    <link rel="stylesheet" href="{% static "css/base.css"%}">
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'cars_view' %}">Carros</a>
+                </li>
+                <li>
+                    <a href="{% url 'form_view' %}">Cadastrar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>
+            Carros Multimarcas
+        </p>
+    </footer>
+
+  </body>
+</html>
